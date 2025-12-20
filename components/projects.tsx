@@ -95,7 +95,7 @@ export default function Projects() {
     <section
       ref={sectionRef}
       id="projects"
-      className="min-h-screen flex items-center justify-center px-4 md:px-8 md:py-20"
+      className="min-h-screen flex items-center justify-center px-4 md:px-8 py-10 md:py-20"
     >
       <div className="max-w-4xl w-full">
         <h2
