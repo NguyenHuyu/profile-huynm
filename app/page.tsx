@@ -57,12 +57,15 @@ function About() {
       ref={sectionRef}
       id="about"
       className="min-h-screen flex items-center justify-center px-4 md:px-8 py-10 md:py-20"
+      itemScope
+      itemType="https://schema.org/Person"
     >
       <div className="max-w-3xl w-full">
         <h2
           className={`text-4xl md:text-5xl font-bold mb-8 gradient-text scroll-reveal ${
             isVisible ? "revealed" : ""
           }`}
+          itemProp="name"
         >
           About Me
         </h2>

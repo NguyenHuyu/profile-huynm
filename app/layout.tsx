@@ -1,44 +1,157 @@
 import type React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://huynm.com";
+const ogImage = "/images/images.jpeg";
+
 export const metadata: Metadata = {
-  title: "Huynm | Full-Stack Software Engineer",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Nguyễn Minh Huy | Full-Stack Software Engineer",
+    template: "%s | Huynm Portfolio",
+  },
+
   description:
-    "Nguyen Minh Huy - Full-stack software engineer with expertise in React, Next.js, Node.js, and .NET. 2+ years building scalable web applications.",
-  generator: "huynm.com",
-  keywords: ["huynm", "nguyen minh huy"],
+    "Nguyen Minh Huy - Full-stack software engineer with 2+ years of experience. Expert in React, Next.js, Node.js, .NET/C#, TypeScript. Building scalable web applications and enterprise solutions.",
+  keywords: [
+    "Nguyen Minh Huy",
+    "huynm",
+    "Full Stack Developer",
+    "Software Engineer",
+    "React Developer",
+    "Next.js Developer",
+    ".NET Developer",
+    "Node.js Developer",
+    "TypeScript Developer",
+    "Web Developer Vietnam",
+    "Frontend Developer",
+    "Backend Developer",
+    "Portfolio",
+    "React",
+    "Next.js",
+    "TypeScript",
+    ".NET",
+    "C#",
+    "Node.js",
+    "Express.js",
+    "PostgreSQL",
+    "MongoDB",
+    "TailwindCSS",
+    "Software Engineering",
+    "Web Development",
+    "Ho Chi Minh City",
+    "Vietnam Developer",
+  ],
+  authors: [{ name: "Nguyen Minh Huy" }],
+  creator: "Nguyen Minh Huy",
+  publisher: "Nguyen Minh Huy",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       {
-        url: "https://scontent.fsgn19-1.fna.fbcdn.net/v/t39.30808-6/598974846_2368969780188371_3888231183088188503_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEFgfaI_vYoRh_zAGFab7TUb-dCq18lG4lv50KrXyUbiRLdyWHv1j8hONMoZD7zHpOrteWJ2Rf9uoHZYNi25f0_&_nc_ohc=yF47WG2XK5MQ7kNvwFCPkhU&_nc_oc=Adk8SDrjcxQ1lrapZw_Nw9gi83iq_B3GjaOwbzQ3vmvu-tfPIl337s-Jih71fSBN-DM&_nc_zt=23&_nc_ht=scontent.fsgn19-1.fna&_nc_gid=Gf9sjAC7qOFSQ99fYl7aOg&oh=00_AfnMBvay5khjWoqt-WEa7dQ0iTjHdBYwew7wdvHxcuB7SQ&oe=694C74B2",
+        url: ogImage,
+        sizes: "any",
+      },
+    ],
+    apple: [
+      {
+        url: ogImage,
+        sizes: "180x180",
       },
     ],
   },
-
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Huynm Portfolio",
     title: "Nguyễn Minh Huy | Full-Stack Software Engineer",
     description:
-      "Full-stack software engineer with expertise in React, Next.js, Node.js, and .NET.",
-    type: "website",
+      "Full-stack software engineer with expertise in React, Next.js, Node.js, and .NET. 2+ years building scalable web applications and enterprise solutions.",
     images: [
-      "https://scontent.fsgn19-1.fna.fbcdn.net/v/t39.30808-6/598974846_2368969780188371_3888231183088188503_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEFgfaI_vYoRh_zAGFab7TUb-dCq18lG4lv50KrXyUbiRLdyWHv1j8hONMoZD7zHpOrteWJ2Rf9uoHZYNi25f0_&_nc_ohc=yF47WG2XK5MQ7kNvwFCPkhU&_nc_oc=Adk8SDrjcxQ1lrapZw_Nw9gi83iq_B3GjaOwbzQ3vmvu-tfPIl337s-Jih71fSBN-DM&_nc_zt=23&_nc_ht=scontent.fsgn19-1.fna&_nc_gid=Gf9sjAC7qOFSQ99fYl7aOg&oh=00_AfnMBvay5khjWoqt-WEa7dQ0iTjHdBYwew7wdvHxcuB7SQ&oe=694C74B2",
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Nguyen Minh Huy - Full-Stack Software Engineer",
+      },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Nguyễn Minh Huy | Full-Stack Software Engineer",
     description:
-      "Full-stack software engineer with expertise in React, Next.js, Node.js, and .NET.",
-    images: [
-      "https://scontent.fsgn19-1.fna.fbcdn.net/v/t39.30808-6/598974846_2368969780188371_3888231183088188503_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEFgfaI_vYoRh_zAGFab7TUb-dCq18lG4lv50KrXyUbiRLdyWHv1j8hONMoZD7zHpOrteWJ2Rf9uoHZYNi25f0_&_nc_ohc=yF47WG2XK5MQ7kNvwFCPkhU&_nc_oc=Adk8SDrjcxQ1lrapZw_Nw9gi83iq_B3GjaOwbzQ3vmvu-tfPIl337s-Jih71fSBN-DM&_nc_zt=23&_nc_ht=scontent.fsgn19-1.fna&_nc_gid=Gf9sjAC7qOFSQ99fYl7aOg&oh=00_AfnMBvay5khjWoqt-WEa7dQ0iTjHdBYwew7wdvHxcuB7SQ&oe=694C74B2",
-    ],
+      "Full-stack software engineer with expertise in React, Next.js, Node.js, and .NET. Building scalable web applications.",
+    images: [ogImage],
+    creator: "@huynm",
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+
+  category: "Technology",
+};
+
+// Structured Data for SEO
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Nguyen Minh Huy",
+  alternateName: "Huynm",
+  jobTitle: "Full-Stack Software Engineer",
+  description:
+    "Full-stack software engineer with expertise in React, Next.js, Node.js, and .NET",
+  url: siteUrl,
+  image: ogImage,
+  sameAs: [
+    "https://github.com/NguyenHuyu",
+    "https://www.linkedin.com/in/nguyenhuyu/",
+  ],
+  email: "yuhuynguyen.1204@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Ho Chi Minh City",
+    addressCountry: "VN",
+  },
+  knowsAbout: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    ".NET",
+    "C#",
+    "PostgreSQL",
+    "MongoDB",
+    "Web Development",
+    "Software Engineering",
+  ],
+  alumniOf: {
+    "@type": "EducationalOrganization",
+    name: "The Saigon International University",
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: "Opus Solution",
   },
 };
 
@@ -50,8 +163,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
-        <Analytics />
       </body>
     </html>
   );

@@ -1,7 +1,22 @@
-"use client";
-
+import type { Metadata } from "next";
 import Navigation from "@/components/navigation";
 import Gallery from "@/components/gallery";
+
+export const metadata: Metadata = {
+  title: "Company Gallery",
+  description:
+    "Browse our company gallery showcasing events, achievements, and team moments. A visual journey through our company culture and accomplishments.",
+  openGraph: {
+    title: "Company Gallery | Huynm Portfolio",
+    description:
+      "Browse our company gallery showcasing events, achievements, and team moments.",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function GalleryPage() {
   return (
@@ -13,4 +28,3 @@ export default function GalleryPage() {
     </div>
   );
 }
-

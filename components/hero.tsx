@@ -47,7 +47,7 @@ export default function Hero() {
       ))}
 
       <div className="max-w-3xl mx-auto w-full text-center relative z-10 fade-in">
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 text-balance text-reveal">
+        <h1 className="text-5xl md:text-7xl font-bold mb-4 text-balance text-black">
           <span className="text-gray-600" style={{ animationDelay: "0.1s" }}>
             Nguyễn
           </span>{" "}
