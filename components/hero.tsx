@@ -46,7 +46,7 @@ export default function Hero() {
         />
       ))}
 
-      <div className="max-w-3xl w-full text-center md:text-left relative z-10 fade-in">
+      <div className="max-w-3xl mx-auto w-full text-center relative z-10 fade-in">
         <h1 className="text-5xl md:text-7xl font-bold mb-4 text-balance text-reveal">
           <span className="text-gray-600" style={{ animationDelay: "0.1s" }}>
             Nguyễn
@@ -65,7 +65,7 @@ export default function Hero() {
           Software Engineer
         </p>
         <p
-          className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl slide-up"
+          className="text-lg text-justify text-muted-foreground mb-8 leading-relaxed max-w-2xl slide-up"
           style={{ animationDelay: "0.5s" }}
         >
           Crafting high-performance web applications with modern technologies.
@@ -74,7 +74,7 @@ export default function Hero() {
         </p>
 
         <div
-          className="flex gap-4 flex-wrap md:flex-nowrap slide-up"
+          className="flex gap-4 justify-center flex-wrap slide-up"
           style={{ animationDelay: "0.6s" }}
         >
           <Link
